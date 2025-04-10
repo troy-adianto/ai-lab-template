@@ -192,7 +192,7 @@ spec:
           title: Image Registry
           type: string
           description: The image registry host
-          default: quay.io
+          default: quay-w9bw6.apps.cluster-w9bw6.w9bw6.sandbox881.opentlc.com
           ui:help: "You can also provide the on-prem registry host, example: quay-tv2pb.apps.cluster-tv2pb.sandbox1194.opentlc.com"
         imageOrg:
           title: Image Organization
@@ -430,8 +430,8 @@ spec:
       input:
         appName: ${{ parameters.name }}-app-of-apps
         # name set in rhdh config
-        argoInstance: default
-        namespace: ai-rhdh
+        argoInstance: argocd
+        namespace: janus-argocd
         repoUrl: https://${{ parameters.githubServer if parameters.hostType === 'GitHub' else parameters.gitlabServer }}/${{ parameters.repoOwner }}/${{ parameters.repoName }}-gitops.git
         path: './app-of-apps'
     # SED_APP_SUPPORT_START
